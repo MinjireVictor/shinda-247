@@ -56,7 +56,7 @@ class Modal extends Component {
             link = <>
                 <Link to={'/user/' + username} onClick={ e => this.getDetail(e) } className={'text-muted ng'}>
                     <p className="p-0 m-0">
-                        <img src={avatar} alt="profile-user" className="thumb-md rounded-circle" />
+                        {/* <img src={avatar} alt="profile-user" className="thumb-md rounded-circle" /> */}
                     </p>
                 </Link>
             </>;
@@ -67,7 +67,7 @@ class Modal extends Component {
            let fixAvatar = (avatar !== undefined && avatar !== false && avatar !== "" && avatar !== null) ? avatar : defaultAvatar;
             link = <>
                 <Link to={'/user/' + username} onClick={ e => this.getDetail(e) } className={cssClass}>
-                    <img src={fixAvatar} alt="user" className="rounded-circle thumb-xs mr-1 hidden-sm" />
+                    {/* <img src={fixAvatar} alt="user" className="rounded-circle thumb-xs mr-1 hidden-sm" /> */}
                     {username}
                 </Link>
             </>;
@@ -77,7 +77,7 @@ class Modal extends Component {
             if(avatar){ // Chats
                 link = <>
                     <Link to={'/user/' + username} onClick={ e => this.getDetail(e) } className={cssClass}>
-                        <img src={avatar} alt="user" className="thumb-lg" />
+                        {/* <img src={avatar} alt="user" className="thumb-lg" /> */}
                         <ul className={'ml-2 mt-0 d-flex'}>
                             <span>{username}</span>
                              <b className="user-level">
@@ -93,7 +93,7 @@ class Modal extends Component {
                 if(avatar === null){
                     link = <>
                         <Link to={'/user/' + username} onClick={ e => this.getDetail(e) } className={cssClass}>
-                            <img src={'/assets/images/avatar.png'} alt="user" className="rounded-circle thumb-sm" />
+                            {/* <img src={'/assets/images/avatar.png'} alt="user" className="rounded-circle thumb-sm" /> */}
                             <ul className={'ml-1 mt-0 d-flex'}>
                                 <span>{username}</span>
                                  <b className="user-level">

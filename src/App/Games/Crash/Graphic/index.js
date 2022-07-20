@@ -476,8 +476,8 @@ function GameCanvas() {
 
     self.drawGraph = function(value) {
         var gradient = value.createLinearGradient(0, 0, self.canvasWidth, 0);
-            gradient.addColorStop("0", "#03a9f4");
-            gradient.addColorStop("0.5", "#673ab7");
+            gradient.addColorStop("0", "#F5A358");
+            gradient.addColorStop("0.5", "#D67509");
             gradient.addColorStop("1.0", "#ff490f");
         for (value.strokeStyle = self.im_in_game ? IN_GAME_COLOR : gradient,
                  value.lineWidth = 4,

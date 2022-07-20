@@ -93,7 +93,7 @@ class Players extends React.Component{
                     {num}
                 </td>
                 <td>
-                    <img className="rounded thumb-xs mr-1" src={avatar} alt="" />
+                   
                     <UserModal username={username} isWinner={false} />
                 </td>
                 <td className={'num-style text-white'}>

@@ -47,7 +47,7 @@ html {
 }
 
 .form-control:disabled, .form-control[readonly] {
-    background-color: #2c2f35;
+    background-color: #000;
 }
 
 a {
@@ -129,7 +129,7 @@ hr {
     font-family: 'Proxima Nova', sans-serif;
 }
 .alert.alert-success {
-    background: #03a9f4;
+    background: #D67509;
 }
 
 .btn-info:not(:disabled):not(.disabled):active:focus, .show > .btn-info.dropdown-toggle:focus, .btn-info.focus, .btn-info:focus, .btn-outline-info.focus, .btn-outline-info:focus {
@@ -580,14 +580,14 @@ label {
 }
 
 .btn-bet, .btn-bet-success, .btn-bet-success-crash {
-    background: linear-gradient(100deg, rgb(220 53 69) 0%, rgb(3 169 244) 100%);
+    background: #D67509;
     padding-top: 12px;
     padding-bottom: 12px;
     outline: none;
     font-size: 16px;
     color: #FFF;
     font-weight: 500;
-    box-shadow: 0px 0px 2px #ea3e4e;
+    box-shadow: 0px 0px 2px #D67509;
     font-family: 'Proxima Nova', sans-serif;
     border: 0;
     font-weight: 700;
@@ -595,7 +595,7 @@ label {
 }
 
 .btn-bet:hover, .btn-bet-success:hover {
-    background: #ea3e4e;
+    background: #D67509;
     color: #FFF !important;
 }
 
@@ -615,7 +615,7 @@ label {
     right: -50%;
     bottom: -50%;
     left: -50%;
-    background: linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.3) 50%,rgba(255,255,255,0));
+    background: #D67509;
     -webkit-transform: rotateZ(60deg) translate(-5em,19em);
     -ms-transform: rotate(60deg) translate(-5em,19em);
     transform: rotateZ(60deg) translate(-5em,19em);
@@ -733,8 +733,8 @@ label {
 }
 
 .btn-primary {
-    background: #03a9f4;
-    border-color: #03a9f4;
+    background: #D67509;
+    border-color: #D67509;
 }
 
 .hilo-next {
@@ -1322,7 +1322,7 @@ ul.buckets li, ul.percents li {
 
 .modal-body .form-control {
     border: 0;
-    background: #41434c;
+    background: #000;
 }
 
 .modal-body .form-control:focus {
@@ -1439,7 +1439,7 @@ ul.buckets li, ul.percents li {
     text-align: center;
 }
 .linear-cl {
-    background: linear-gradient(256.7deg, rgb(3 169 244) 0, rgb(220 53 69) 100%);
+    background: #D67509;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
@@ -1454,7 +1454,7 @@ ul.buckets li, ul.percents li {
     height: 1px;
     left: 0;
     bottom: 0;
-    background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%, #e91e63 35%, #03a9f4 70%,rgba(147,184,189,0) 100%);
+    background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%, #e91e63 35%, #D67509 70%,rgba(147,184,189,0) 100%);
 }
 
 .modal-content .card {
@@ -1961,7 +1961,7 @@ ul.buckets li, ul.percents li {
 }
 
 .bg-cs, .btn-cs {
-    background: #34363e;
+    background: #1F2737;
     color: #FFF;
 }
 
@@ -3219,7 +3219,7 @@ html, body {height: 100%;}
 }
 
 #player1.selected, #player2.selected {
-    background-color: #03A9F4;
+    background-color: #D67509;
     color: #FFF;
 }
 
@@ -4169,7 +4169,7 @@ table {
     color: #FFF;
     font-size: 12px;
     border-color: transparent;
-    background-color: rgb(58 60 64);
+    background-color: #1F2737;
     height: calc(2.7rem + 2px);
     border-top-left-radius: 3px !important;
     border-bottom-left-radius: 3px !important;
@@ -4194,7 +4194,7 @@ table {
 }
 
 .text-success {
-    color: #03a9f4 !important
+    color: #D67509 !important
 }
 
 .btn-mk {
@@ -4274,7 +4274,7 @@ table {
 }
 
 .wallet-modal .form-control {
-    background: #253540;
+    background: #000;
     color: #f8f8f8;
 }
 
@@ -4435,12 +4435,12 @@ table {
 
 .bg-cs2:hover, .bg-cs2:focus {
     color: #FFF;
-    background: #ef2b3e;
+    background: #D67509;
 }
 
 .active.bg-cs2 {
     color: #fff;
-    background: #ef2b3e;
+    background: #D67509;
 }
 
 .countdown .days, .countdown .hours, .countdown .minutes, .countdown .seconds {
@@ -4975,7 +4975,7 @@ table {
     border-radius: 0 25px 25px 0;
 }
 .left-sidenav .nav-item a.active:before {
-    background: linear-gradient(100deg, rgb(220 53 69) 0%, rgb(3 169 244) 100%);
+    background: #D67509;
 }
 
 .min.left-sidenav .nav-item a.active:before, .min.left-sidenav .nav-item a:hover:before {
@@ -5270,7 +5270,7 @@ table {
 }
 
 .bg-dice-options .bg-dice-options .form-control .input-group-text{
-    background: #223338 !important;
+    background: #000 !important;
 }
 
 .bg-dg {
@@ -5640,7 +5640,7 @@ table {
 .mybets li:last-child {margin-right: 0;}
 
 .mybets li.txt-success a:before {
-    color: #03a9f4;
+    color: #D67509;
 }
 .mybets li.txt-danger a:before {
 	color: #e91e63;
@@ -5656,7 +5656,7 @@ table {
 }
 
 .mybets li:hover {
-    background: #03a9f4 !important;
+    background: #D67509 !important;
     transition: all 0.2s ease-out;
     -o-transition: all 0.2s ease-out;
     -ms-transition: all 0.2s ease-out;
@@ -5911,7 +5911,7 @@ table {
 }
 
 .modal-body .input-group-text, .min-form .input-group-text {
-    background: #4a4c54 !important;
+    background: #1F2737 !important;
     border-radius: 4px 0 0 4px !important;
     font-size: 13px !important;
     letter-spacing: .4px;
@@ -6069,7 +6069,7 @@ table {
 .side-border {
     height: 1px;
     width: 100%;
-    background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%, #e91e63 35%, #03a9f4 70%,rgba(147,184,189,0) 100%);
+    background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%, #e91e63 35%, #D67509 70%,rgba(147,184,189,0) 100%);
 }
 
 .__react_component_tooltip.show {
@@ -6620,7 +6620,7 @@ table {
 .tcr.nav-tabs .nav-link:first-child {border-radius: 5px 0 0 5px;}
 .tcr.nav-tabs .nav-link:last-child {border-radius: 0 5px 5px 0;}
 .tcr.nav-tabs .nav-link.active {
-    background: #ff6a78 !important;
+    background: #F5A358 !important;
 }
 
 .wheeler-result {
@@ -7387,7 +7387,7 @@ table {
 }
 
 .rain .form-control {
-    background: #2d2940;
+    background: #000;
 }
 
 .game-modal i {

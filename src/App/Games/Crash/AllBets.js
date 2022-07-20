@@ -241,7 +241,7 @@ class UserRow extends React.Component {
         return (
             <tr key={this.props.currentPlayer.uid} className={type + ' ' + self + ' q-crash text-center'}>
                 <td className="text-left">
-                    <UserModal username={this.props.currentPlayer.name} queue={true} avatar={this.props.currentPlayer.avatar} isWinner={profit} />
+                    <UserModal username={this.props.currentPlayer.name} queue={true}  isWinner={profit} />
                 </td>
                 <td className="text-left" size="20"> {cashout}</td>
                 <td className="text-left num-style">

@@ -10,11 +10,7 @@ class Logo extends React.Component {
                     <Link to="/" className="logo">
                             <span>
                                 <img src="/assets/images/logo.png" className="logo-sm" alt="Logo" />
-                                {this.props.show &&
-                                    <span className={"ml-1 font-25 text-logo"}>
-                                        <span>{BRAND}</span>
-                                    </span>
-                                }
+                               
                             </span>
                     </Link>
                 </div>

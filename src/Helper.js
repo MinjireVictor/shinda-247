@@ -22,7 +22,7 @@ export const __ = _;
  * BRAND
  * @type {string}
  */
-export const BRAND = "Cheza254";
+export const BRAND = "Shinda247";
 
 /**
  *
