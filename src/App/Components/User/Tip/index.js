@@ -15,8 +15,8 @@ class TipUser extends Component{
         super(props);
         this.state = {
             loading: true,
-            amount: forceSatoshiFormat(0.00000010),
-            coin: 'btc',
+            amount: forceSatoshiFormat(10.00),
+            coin: 'kshs',
             list: []
         };
     }

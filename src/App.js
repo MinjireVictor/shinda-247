@@ -176,7 +176,7 @@ class SingleGameModal extends Component {
 
         profit = parseFloat(profit);
 
-        if (profit === 0 || profit === 0.00000000) {
+        if (profit === 0 || profit === 0.00) {
             isLost = true;
         }
 
@@ -586,7 +586,7 @@ class PlayerRow extends React.Component {
         let profit = __.toNumber(array.profit);
         let coin = __.upperCase(array.coin);
 
-        if (profit === 0 || profit === 0.00000000 || profit === '0.00000000') {
+        if (profit === 0 || profit === 0.00 || profit === '0.00') {
             profit = '-' + array.amount;
             color = 'text-warning';
         }

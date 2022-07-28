@@ -12,7 +12,7 @@ class MakeFields extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            amount : forceSatoshiFormat(0.00000010),
+            amount : forceSatoshiFormat(10.00),
             payout: (2).toFixed(2)
         };
     }
@@ -23,7 +23,7 @@ class MakeFields extends React.Component {
 
         if(name === 'amount'){
             if(parseFloat(value) <= 0){
-                value = forceSatoshiFormat(0.00000010);
+                value = forceSatoshiFormat(10.00);
             }
         }
 

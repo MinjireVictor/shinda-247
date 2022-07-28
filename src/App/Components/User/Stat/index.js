@@ -65,7 +65,7 @@ class Stat extends Component {
 
     render(){
         let {chart_coin} = this.props;
-        chart_coin =  "btc";
+        chart_coin =  "kshs";
 
         return (
             <>

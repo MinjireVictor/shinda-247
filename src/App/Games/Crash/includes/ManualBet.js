@@ -96,18 +96,18 @@ class ManualBet extends Component {
             var amount = this.wrapperRef.current.value;
 
             if (amount === '') {
-                this.setState({ amount: 0.00000010 });
+                this.setState({ amount: 10.00 });
             }
 
-            if(parseFloat(amount) < 0.00000010){
-                this.setState({ amount: forceSatoshiFormat(0.00000010) });
+            if(parseFloat(amount) < 10.00){
+                this.setState({ amount: forceSatoshiFormat(10.00) });
             }
 
             if(parseFloat(amount) <= 0){
-                this.setState({ amount: forceSatoshiFormat(0.00000010) });
+                this.setState({ amount: forceSatoshiFormat(10.00) });
             }
             else {
-                if(amount === "NaN") amount = 0.00000010;
+                if(amount === "NaN") amount = 10.00;
                 this.setState({ amount: forceSatoshiFormat(amount) });
             }
         }
@@ -285,7 +285,7 @@ class ManualBet extends Component {
             let { im_in_game } = this.props;
             let { engine } = this.state;
 
-            let coin = 'btc';
+            let coin = 'kshs';
             let amount = engine.amount
             
             this.setState({ gameStatus: 'started' });
@@ -297,7 +297,7 @@ class ManualBet extends Component {
                 let self = this;
                 this.state.buttonProgress = setInterval(function() {
                         let calc = amount * (Game['current_amount'] - 1);
-                        self.setState({ buttonText: 'CashOut ' + forceSatoshiFormat(calc) + ' ' + coin });
+                        self.setState({ buttonText: 'CashOut ' + forceSatoshiFormat(calc) + ' KES' });
 
                         //Helper
                         if(Game['current_amount'] >= this.state.payout)
@@ -472,8 +472,8 @@ class ManualBet extends Component {
 
     setMin = (e) => {
         e.preventDefault();
-        this.setState({ amount: '0.00000010' });
-        storage.setKey('lam', '0.00000010');
+        this.setState({ amount: '10.00' });
+        storage.setKey('lam', '10.00');
     };
 
     multi = (e) => {
@@ -484,7 +484,7 @@ class ManualBet extends Component {
 
     devide = (e) => {
         var max = this.state.amount / 2
-        max = Math.max(max, 0.00000010)
+        max = Math.max(max, 10.00)
         this.setState({ amount: forceSatoshiFormat(max) });
         storage.setKey('lam', forceSatoshiFormat(max));
     }
@@ -494,7 +494,7 @@ class ManualBet extends Component {
         let { mobile } = this.props;
 //        let hotKeyColor = (hotkey === "OFF") ? 'label-grey': 'label-success';
 
-        if(amount === "NaN") amount = 0.00000010;
+        if(amount === "NaN") amount = 10.00;
 
         return(
             <div onKeyPress={ (e) => this.handleHotKey(e)}>

@@ -14,13 +14,14 @@ class Credit extends React.Component {
         super(props);
         this.state = {
             token: storage.getKey('token'),
-            coin: storage.getKey('coin') ? storage.getKey('coin'): "BTC",
+            coin: storage.getKey('coin') ? storage.getKey('coin'): "KSHS",
             credits: {},
             coins: [],
             different: [],
             credit: false
         };
         this.selectCoin = this.selectCoin.bind(this);
+        this.makeDeposit = this.makeDeposit.bind(this);
     }
 
     componentDidMount() {
@@ -71,7 +72,7 @@ class Credit extends React.Component {
 
         let check = forceSatoshiFormat(different);
 
-        if(check.toString() !== '0.00000000'){
+        if(check.toString() !== '0.00'){
             this.setState(state => ({ different: [arr, ...state.different] }));
         }
 
@@ -150,6 +151,13 @@ class Credit extends React.Component {
         );
     }
 
+    makeDeposit() {
+        this.props.history.push({
+          pathname: '/wallet',
+          state: { index: 1 }
+        });
+    }
+
     render() {
         let { credit, different, coin, coins } = this.state;
         credit = forceSatoshiFormat(credit, coin);
@@ -163,17 +171,15 @@ class Credit extends React.Component {
                         <span id="cup" className={'mt-2 mr-1'}>{diff}</span>
                         <img src={ '/assets/images/' + __.lowerCase(coin) + '.png' }  className={'mini-coin-5 mr-1'} alt=""/>
                         <div className="btc-balance">
-                            <Dropdown className={"clist mt-0"}>
-                                <Dropdown.Toggle split variant="block" className={'p-0 mt-0'} id="dropdown-split-coins">
-                                    <h5 className="m-0"> <span className={'text-white'}>{credit} {coin}</span></h5>
-                                    <span className="text-muted text-center d-block">
-                                        <i className={'mdi mdi-chevron-down font-10'} />
-                                    </span>
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu className={"dopdown-menu-right num-style"}>
-                                    {coins}
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <h5 className="m-0 text-left font-12">Account balance:</h5>
+                            <span className="text-white d-block font-16">
+                                {__.upperCase(coin) + ' ' + credit}
+                            </span>
+                        </div>
+                        <div>
+                            <button className="dropdown-toggle btn btn-user mt-0 deposit-btn" onClick={this.makeDeposit}>
+                                <i className="fas fa-arrow-down text-drop mr-1 font-13"/> DEPOSIT FUNDS
+                            </button>
                         </div>
                     </div>
                 </li>

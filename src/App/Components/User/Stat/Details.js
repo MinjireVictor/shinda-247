@@ -22,7 +22,7 @@ class Details extends React.Component {
             changeCoinLoader: false,
             medalView: false,
             coins: [],
-            currentCoin: 'btc',
+            currentCoin: 'kshs',
         };
     }
 

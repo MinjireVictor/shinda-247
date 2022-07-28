@@ -1,10 +1,10 @@
 const coins = [
     {
         id: 1,
-        name: "BTC",
-        preffix: "btc",
+        name: "KES",
+        preffix: "kshs",
         image: "btc.png",
-        network: 'btc',
+        network: 'kshs',
         min: "0.00008000",
         active: true
     },

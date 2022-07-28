@@ -225,7 +225,7 @@ class Players extends React.Component{
             date = timeConvertor(created);
         }
 
-        if(__.toNumber(profit) !== 0.00000000)
+        if(__.toNumber(profit) !== 0.00)
             isWinner = true;
 
         return(

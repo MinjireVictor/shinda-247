@@ -122,24 +122,24 @@ export function isUTF8(text) {
  * @param coin
  * @return {*}
  */
-export function forceSatoshiFormat(val, coin = 'bltz') {
+export function forceSatoshiFormat(val, coin = 'kshs') {
   // eslint-disable-next-line no-extend-native
-  Number.prototype.format = function(n, x, s, c) {
-    var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\D' : '$') + ')',
-      num = this.toFixed(Math.max(0, ~~n));
+//   Number.prototype.format = function(n, x, s, c) {
+//     var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\D' : '$') + ')',
+//       num = this.toFixed(Math.max(0, ~~n));
 
-    return (c ? num.replace('.', c) : num).replace(
-      new RegExp(re, 'g'),
-      '$&' + (s || ',')
-    );
-  };
+//     return (c ? num.replace('.', c) : num).replace(
+//       new RegExp(re, 'g'),
+//       '$&' + (s || ',')
+//     );
+//   };
 
   var amount = parseFloat(val);
 
   if(isNaN(amount))
     return val;
   else
-      return Number(amount.format(8, 30, '.','.')).toFixed(8);
+      return amount.toFixed(2);
 }
 
 /*

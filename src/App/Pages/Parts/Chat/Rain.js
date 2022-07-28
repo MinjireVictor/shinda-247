@@ -19,9 +19,9 @@ class Rain extends React.Component {
             disabled: false,
             players: 2,
             amount: forceSatoshiFormat(.00000050),
-            coin: 'btc',
+            coin: 'kshs',
             clientCountry: storage.getKey('country') ? storage.getKey('country'): "GLOBAL",
-            currentCoin: "BTC"
+            currentCoin: "KES"
         }
     }
 
@@ -110,7 +110,7 @@ class Rain extends React.Component {
             wait(500).then(() => {
                 socket.emit(C.RAIN, ({
                     amount: this.state.amount,
-                    coin: 'btc',
+                    coin: 'kshs',
                     players: parseInt(this.state.players),
                     room: c
                 }));
