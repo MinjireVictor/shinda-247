@@ -55,7 +55,8 @@ class Canvas extends React.Component {
         wait(500).then(() => {
             this.initCanvas(height);
         })
-
+        // console.log("trying to log graph data")
+        // console.log(JSON.stringify(this.state.gameCanvas));
         engine.trigger.on("finish_crash", data => this.finish(data));
         engine.trigger.on("waiting_crash", (data) => this.waiting(data));
         engine.trigger.on("started_crash", (data) => this.started(data));
@@ -286,6 +287,8 @@ function GameCanvas() {
         },
 
         self.draw = function(value) {
+            // console.log("Loggins self coors" + JSON.stringify(value))
+            // console.log(JSON.stringify(self.coors));
             if (null == self.coors) {
 
                 self.coors = {
