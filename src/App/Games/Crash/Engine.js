@@ -231,7 +231,7 @@ Engine.prototype.finish = function (time) {
     let self = this;
     self.ws.emit(C.FINISH_CRASH, encode({
         token: self.token,
-        token2: randomString(25) + parseFloat(time).toFixed(2),
+        token2: parseFloat(time).toFixed(2),
     }));
 }
 
