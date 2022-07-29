@@ -50,13 +50,13 @@ export const SITE = DEVELOPMENT ? 'http://localhost:3000' : 'https://';
  * General Socket Address
  * @type {string}
  */
-export const SOCKET = DEVELOPMENT ? 'ws://127.0.0.1:3004' : 'ws://api.shinda247.com';
+export const SOCKET = DEVELOPMENT ? 'ws://127.0.0.1:3004' : 'ws://localhost:3005';
 
 /**
  * General API Address
  * @type {string}
  */
-export const API = DEVELOPMENT ? 'http://127.0.0.1:3004' : 'http://api.shinda247.com';
+export const API = DEVELOPMENT ? 'http://127.0.0.1:3004' : 'http://localhost:3005';
 
 /*
  * Support Skype
