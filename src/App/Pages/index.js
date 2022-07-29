@@ -115,7 +115,7 @@ class Index extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="flex-1">
+                                    {/* <div className="flex-1">
                                         <div className="card mb-2">
                                             <div className="card-body p-1">
                                                 <h5 className="mr-1 ml-1">PLAYERS</h5>
@@ -124,7 +124,7 @@ class Index extends React.Component {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     <Chat t={t} location={this.props.location} />
                                 </div>
                             </div>

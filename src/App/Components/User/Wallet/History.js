@@ -44,7 +44,7 @@ class History extends Component {
             result.forEach((player, i) => {
                 let row = <HistoryTable key={i} result={player.result} hash={player.hash} self={true} 
                             id={player.gid} game={player.game} created={player.created} coin={player.coin} username={player.username}
-                                        amount={forceSatoshiFormat(player.amount)} profit={player.profit ? forceSatoshiFormat(player.profit): '0.00000000'}  />;
+                                        amount={forceSatoshiFormat(player.amount)} profit={player.profit ? forceSatoshiFormat(player.profit): '0.00'}  />;
                 this.setState(state => ({ history: [row, ...state.history] }));
             });
         }
@@ -149,7 +149,7 @@ class HistoryTable extends React.Component{
         let {username, amount, profit, coin, created, hash, id, self, game} = this.props;
         let isWinner = false;
 
-        if(__.toNumber(profit) !== 0.00000000)
+        if(__.toNumber(profit) !== 0.00)
             isWinner = true;
 
         let code;

@@ -10,7 +10,7 @@ class Modal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            coin: 'btc'
+            coin: 'kshs'
         };
     }
 

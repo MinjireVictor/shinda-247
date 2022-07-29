@@ -73,7 +73,7 @@ function Engine(){
     /**
      * Player coin
      */
-    self.coin = 'btc';
+    self.coin = 'kshs';
 
     /**
      * Player Status
@@ -220,8 +220,8 @@ function Engine(){
 Engine.prototype.play = function () {
     let self = this;
 
-    if(self.amount < 0.00000010){
-        self.amount = forceSatoshiFormat(0.00000010)
+    if(self.amount < 10.00){
+        self.amount = forceSatoshiFormat(10.00)
     }
 
     self.ws.emit(C.PLAY_CRASH, encode({
@@ -240,7 +240,7 @@ Engine.prototype.finish = function (time) {
     let self = this;
     self.ws.emit(C.FINISH_CRASH, encode({
         token: self.token,
-        token2: randomString(25) + parseFloat(time).toFixed(2),
+        token2: parseFloat(time).toFixed(2),
     }));
 }
 

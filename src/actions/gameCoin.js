@@ -4,7 +4,7 @@ import storage from "../Storage";
 export const gameCoin = () => dispatch => {
     dispatch({
         type: COIN,
-        payload: (storage.getKey('coin') !== null) ? storage.getKey('coin'): 'BTC'
+        payload: (storage.getKey('coin') !== null) ? storage.getKey('coin'): 'KES'
     })
 };
 

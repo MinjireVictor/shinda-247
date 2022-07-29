@@ -294,7 +294,7 @@ class Message extends React.Component{
             var isLost = false;
             var profit = parseFloat(message.profit);
 
-            if (profit === 0 || profit === 0.00000000) {
+            if (profit === 0 || profit === 0.00) {
                 isLost = true;
             }
 

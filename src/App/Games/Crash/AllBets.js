@@ -236,6 +236,7 @@ class UserRow extends React.Component {
         if(profit !== '-'){
             type = 'text-success';
             cashout = (this.props.currentPlayer.current/100).toFixed(2) +  'x';
+            profit = profit.toFixed(2);
         }
 
         return (

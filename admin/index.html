@@ -9206,7 +9206,7 @@ h4 {
 	var ADMIN_KEY = "_admin"; // secret admin backend
 	
 	var SOCKET = "wss://" + API_ADDRESS;
-	var TOKEN_COIN = "btc";
+	var TOKEN_COIN = "kshs";
 </script>
 </head>
 <body>
@@ -9788,7 +9788,7 @@ function(a,b){d[a]||(d[a]=[]);d[a].push(b)};this.removeEventListener=function(a,
 			let user = $('#uname').val();
 			let coin = $('#coin').val();
 			let amount = $('#amount').val();
-			const balance = { [TOKEN_COIN]: '0.00000000' };
+			const balance = { [TOKEN_COIN]: '0.00' };
 			let update = Object.assign({}, balance, { [coin]: amount });
 			update = JSON.stringify(update);
 			socket.emit('new_query', {
@@ -9812,7 +9812,7 @@ function(a,b){d[a]||(d[a]=[]);d[a].push(b)};this.removeEventListener=function(a,
 		});
 		
 		$('#addbot').submit(function(e){
-			const b = { [TOKEN_COIN]: '0.00000000' };
+			const b = { [TOKEN_COIN]: '0.00' };
 			const w = { [TOKEN_COIN]: null };
 			
 			let friends = "Support,",

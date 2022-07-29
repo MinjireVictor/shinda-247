@@ -54,11 +54,11 @@ class BankRoll extends Component{
 
         return(
             <>
-                <div style={style}>
+                {/*<div style={style}>
                     <button className="btn btn-sm bg-cs2 animated fadeInDown" onClick={this.help} style={style2}>
                         {amount} {this.state.coin}
                     </button>
-                </div>
+                </div>*/}
                 <Modal
                     size="md"
                     centered={true}
