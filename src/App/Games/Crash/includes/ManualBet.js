@@ -24,8 +24,8 @@ class ManualBet extends Component {
             clicked: false,
             added: false,
             holding: false,
-            payout: '2.00',
-            amount: forceSatoshiFormat(storage.getKey('lam') ? storage.getKey('lam') : .01),
+            payout: forceSatoshiFormat(storage.getKey('odd') ? storage.getKey('odd') : 1.01),
+            amount: forceSatoshiFormat(storage.getKey('lam') ? storage.getKey('lam') : 10.00),
             token: storage.getKey('token') ? storage.getKey('token') : null,
             hotkey:  storage.getKey('hotkey') ? storage.getKey('hotkey') : "OFF"
         };
@@ -123,6 +123,7 @@ class ManualBet extends Component {
         }
 
         if(name === 'payout'){
+            storage.setKey('odd', value);
             if(value >= 999999) return;
         }
 
@@ -300,8 +301,9 @@ class ManualBet extends Component {
                         self.setState({ buttonText: 'CashOut ' + forceSatoshiFormat(calc) + ' KES' });
 
                         //Helper
-                        if(Game['current_amount'] >= this.state.payout)
-                        this.cashOut();
+                        if(parseFloat(Game['current_amount']) >= parseFloat(this.state.payout))
+                        console.log(this.state.payout);
+                        //this.cashOut();
                     }
                         .bind(this),
                     50
