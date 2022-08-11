@@ -184,16 +184,7 @@ class Credit extends React.Component {
                                 {__.upperCase(coin) + ' ' + credit}
                             </span>
                         </div>
-                        <div>
-                            <button className="dropdown-toggle btn btn-user mt-0 deposit-btn" onClick={this.makeDeposit}>
-                                <i className="fas fa-arrow-down text-drop mr-1 font-13"/> DEPOSIT FUNDS
-                            </button>
-                        </div>
-                        <div>
-                            <button className="dropdown-toggle btn btn-user mt-0 py-1-5 trans-btn" onClick={this.openTransactions}>
-                                <i className="dripicons-wallet text-drop mr-1 font-13"/> Transactions
-                            </button>
-                        </div>
+                        
                     </div>
                 </div>
             </>

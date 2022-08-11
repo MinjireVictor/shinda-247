@@ -46,12 +46,12 @@ class Forgot extends Component {
         const email = this.state.email;
         this.setState({ submitted: true});
 
-        if (!email) {
-            return;
-        }
-        if(!isEmail(email)) {
-            return sendNotfication(t('please_enter_valid_email_address'), 'warning','top-center');
-        }
+        // if (!email) {
+        //     return;
+        // }
+        // if(!isEmail(email)) {
+        //     return sendNotfication(t('please_enter_valid_email_address'), 'warning','top-center');
+        // }
 
         this.setState({disabled: true});
 
@@ -93,9 +93,9 @@ class Forgot extends Component {
                                             <div className="form-group">
                                                 <div className="input-group">
                                                     <div className="input-group-append">
-                                                        <span className="input-group-text bgp">Email</span>
+                                                        <span className="input-group-text bgp">Phone</span>
                                                     </div>
-                                                    <input type="email" className="form-control" name="email" placeholder={"email address"} autoComplete={"off"}
+                                                    <input type="text" className="form-control" name="email" placeholder={"07XXX"} autoComplete={"off"}
                                                         onChange={e => this.setState({ email: e.target.value })} />
                                                     {submitted && !email &&
                                                         <div className="help-block">{t('email_is_required')}</div>

@@ -18,6 +18,8 @@ class User extends React.Component {
             avatar: defaultAvatar.slice(0, -3) + 'svg'
         };
         this.callWallet = this.callWallet.bind(this);
+        this.makeDeposit = this.makeDeposit.bind(this);
+        this.openTransactions = this.openTransactions.bind(this);
     }
 
     callWallet() {
@@ -26,6 +28,20 @@ class User extends React.Component {
           state: { index: 0 }
         });
     }
+    makeDeposit() {
+        this.props.history.push({
+          pathname: '/wallet',
+          state: { index: 1 }
+        });
+    }
+
+    openTransactions() {
+        this.props.history.push({
+          pathname: '/wallet',
+          state: { index: 0 }
+        });
+    }
+
 
     render() {
         const { t } = this.props;
@@ -46,6 +62,18 @@ class User extends React.Component {
                                     <span onClick={this.callWallet} className={"dropdown-item"}>
                                         <i className="dripicons-wallet text-muted mr-2 text-drop"/>
                                         Wallet
+                                    </span>
+                                </Dropdown.Item>
+                                <Dropdown.Item as={'button'} className={"animated fadeIn"}>
+                                    <span onClick={this.openTransactions} className={"dropdown-item"}>
+                                        <i className="dripicons-wallet text-muted mr-2 text-drop"/>
+                                        Transactions
+                                    </span>
+                                </Dropdown.Item>
+                                <Dropdown.Item as={'button'} className={"animated fadeIn"}>
+                                    <span onClick={this.makeDeposit} className={"dropdown-item"}>
+                                        <i className="dripicons-wallet text-muted mr-2 text-drop"/>
+                                        Deposit
                                     </span>
                                 </Dropdown.Item>
                                 <Dropdown.Item as={'button'} className={"animated fadeIn"}>

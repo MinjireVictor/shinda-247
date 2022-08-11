@@ -177,8 +177,8 @@ class Deposit extends React.Component {
                                     1. Go to Mpesa menu and Select Lipa na M-PESA, then select Pay Bill option
                                 </p>
                                 <p className="mb-0 font-12">2. Enter business number as <span className="text-yellow">{PAYBILL}</span></p>
-                                <p className="mb-0 font-12">3. Enter the account number as <span className="text-yellow">{userid}</span></p>
-                                <p className="mb-0 font-12">4. Enter the amount you want to transfer to <span className="text-yellow">{ACC_NAME}</span> account</p>
+                                <p className="mb-0 font-12">3. Enter the account number as <span className="text-yellow">Your Phone Number</span></p>
+                                <p className="mb-0 font-12">4. Enter the amount you want to deposit</p>
                                 <p className="mb-0 font-12">5. Enter your Mpesa pin and Confirm the request</p>
                             </div>
                         </>

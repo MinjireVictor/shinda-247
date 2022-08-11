@@ -327,7 +327,7 @@ class Message extends React.Component{
 
         return(
                 <li key={"msg-"+__.toString(idx)} className={'nav-item chat-part animated XfadeIn ' + highlight}>
-                    <UserModal t={t} level={level} cssClass={'user-avatar ml-1'} username={username} chat={true} avatar={avatar} />
+                    <UserModal t={t} level={level} cssClass={'user-avatar ml-1'} username={username} chat={true}  />
                     { (!isNotSelf && !twitch) && <>
                         <div className="chat-option float-right">
                             <span className={'font-15'} onClick={() => this.callUser(username)}>

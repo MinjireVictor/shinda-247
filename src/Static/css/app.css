@@ -173,6 +173,7 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    white-space: nowrap;
 }
 .dtw .links a{padding: 0 5px;}
 
@@ -7534,4 +7535,13 @@ table {
 
 .cpd {
     cursor: default;
+}
+.jp-image{
+    width: 100%;
+}
+.content-left .card{
+    overflow: auto!important;
+}
+.table thead tr th{
+    white-space: nowrap;
 }

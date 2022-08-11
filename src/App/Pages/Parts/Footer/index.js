@@ -21,7 +21,7 @@ export default class Footer extends React.Component {
                         <Link to="/">Home</Link>
                         <Link to="/privacy">Privacy Policy</Link>
                         <Link to="/terms">User Agreement</Link>
-                        <Link to="/affiliate">Affiliate</Link>
+                        {/* <Link to="/affiliate">Affiliate</Link> */}
                         <Link to="#" onClick={this.verify}>Verify Result</Link>
                         <Link to="#" onClick={this.help}>Help</Link>
                     </div>

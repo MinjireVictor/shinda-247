@@ -108,7 +108,7 @@ function Engine(){
      * Event on Getting Status game
      */
     self.ws.on(C.STATUS_CRASH, function (data) {
-        console.log("Logging Status STATUS_CRASH" + JSON.stringify(data) )
+        // console.log("Logging Status STATUS_CRASH" + JSON.stringify(data) )
         data =  decode(data);
         self.gameStatus = data.status;
         self.history.push(data.crashes);
@@ -123,7 +123,7 @@ function Engine(){
      * Event on Getting History
      */
     self.ws.on(C.HISTORY_CRASH, function (data) {
-        console.log("Logging Status HISTORY_CRASH " + JSON.stringify(data) )
+        // console.log("Logging Status HISTORY_CRASH " + JSON.stringify(data) )
         data =  decode(data);
         self.trigger.emit(C.HISTORY_CRASH, data);
     });
@@ -132,7 +132,7 @@ function Engine(){
      * Event on Getting All Players
      */
     self.ws.on(C.PLAYERS_CRASH, function (data) {
-        console.log("Logging Status PLAYERS_CRASH " + JSON.stringify(data) )
+        // console.log("Logging Status PLAYERS_CRASH " + JSON.stringify(data) )
         data =  decode(data);
         self.trigger.emit('game_players', data);
     });
@@ -141,7 +141,7 @@ function Engine(){
      * Event on Playing Game by User
      */
     self.ws.on(C.PLAY_CRASH, function (data) {
-        console.log("Logging Status PLAY_CRASH " + JSON.stringify(data) )
+        // console.log("Logging Status PLAY_CRASH " + JSON.stringify(data) )
         data = decode(data);
         self.isPlaying = true;
         self.trigger.emit('play_crash', data);
@@ -151,7 +151,7 @@ function Engine(){
      * Event on CashOut Game by User
      */
     self.ws.on(C.FINISH_CRASH, function (data) {
-        console.log("Logging Status FINISH_CRASH " + JSON.stringify(data) )
+        // console.log("Logging Status FINISH_CRASH " + JSON.stringify(data) )
         data = decode(data);
         self.isPlaying = false;
         self.trigger.emit('finish_crash', data);
@@ -161,7 +161,7 @@ function Engine(){
      * Event on busted game
      */
     self.ws.on(C.BUSTED_CRASH, function (data) {
-        console.log("Logging Status BUSTED_CRASH " + JSON.stringify(data) )
+        // console.log("Logging Status BUSTED_CRASH " + JSON.stringify(data) )
         data = decode(data);
         self.isPlaying = false;
         self.gameStatus = 'busted';
@@ -179,7 +179,7 @@ function Engine(){
      * Event on started game
      */
     self.ws.on(C.STARTED_CRASH, function (data) {
-        console.log("Logging Status STARTED_CRASH " + JSON.stringify(data) )
+        // console.log("Logging Status STARTED_CRASH " + JSON.stringify(data) )
         data = decode(data);
         self.gameStatus = 'started';
         self.time = data.time
@@ -194,7 +194,7 @@ function Engine(){
      * Script Excution from here
      */
     self.ws.on(C.WAITING_CRASH, function (data) {
-        console.log("Logging Status WAITING_CRASH " + JSON.stringify(data) )
+        // console.log("Logging Status WAITING_CRASH " + JSON.stringify(data) )
         data = decode(data);
         self.gameStatus = 'waiting';
         self.time = data.time
@@ -208,7 +208,7 @@ function Engine(){
      * Event on Error
      */
     self.ws.on(C.ERROR_CRASH, function (data) {
-        console.log("Logging Status ERROR_CRASH " + JSON.stringify(data) )
+        // console.log("Logging Status ERROR_CRASH " + JSON.stringify(data) )
         data = decode(data);
         self.trigger.emit('error_crash', data);
     });

@@ -2990,8 +2990,8 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:fir
   position: relative;
   margin-bottom: 0;
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  /* width: 40px; */
+  /* height: 40px; */
   vertical-align: middle;
 }
 
@@ -5091,6 +5091,12 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   .form-wizard-wrapper label {
     text-align: left;
   }
+  .d-sm-none{
+    display: none!important;
+  }
+  /* #messages{
+    display: none!important;
+  } */
 }
 
 @media (max-width: 520px) {

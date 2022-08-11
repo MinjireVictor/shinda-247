@@ -281,6 +281,36 @@ class ManualBet extends Component {
         }
     }
 
+    // checkStartedGame(){
+    //     if(this._isMounted){
+    //         let { im_in_game } = this.props;
+    //         let { engine } = this.state;
+
+    //         let coin = 'kshs';
+    //         let amount = engine.amount
+            
+    //         this.setState({ gameStatus: 'started' });
+
+    //         if(im_in_game === true || this.state.clicked)
+    //         {
+    //             this.setState({ inputDisabled: false, buttonType: "btn-bet-success-crash", clicked: false });
+
+    //             let self = this;
+    //             this.state.buttonProgress = setInterval(function() {
+    //                     let calc = amount * (Game['current_amount'] - 1);
+    //                     self.setState({ buttonText: 'CashOut ' + forceSatoshiFormat(calc) + ' KES' });
+
+    //                     //Helper
+    //                     if(parseFloat(Game['current_amount']) >= parseFloat(this.state.payout))
+    //                     console.log(this.state.payout);
+    //                     this.cashOut();
+    //                 }
+    //                     .bind(this),
+    //                 50
+    //             );
+    //         }
+    //     }
+    // }
     checkStartedGame(){
         if(this._isMounted){
             let { im_in_game } = this.props;
@@ -295,15 +325,18 @@ class ManualBet extends Component {
             {
                 this.setState({ inputDisabled: false, buttonType: "btn-bet-success-crash", clicked: false });
 
+                let counter = 0;
                 let self = this;
                 this.state.buttonProgress = setInterval(function() {
                         let calc = amount * (Game['current_amount'] - 1);
                         self.setState({ buttonText: 'CashOut ' + forceSatoshiFormat(calc) + ' KES' });
+                        counter++;
+
+                        console.log("current amount" +Game['current_amount'] + " | payout"+ this.state.payout);
 
                         //Helper
                         if(parseFloat(Game['current_amount']) >= parseFloat(this.state.payout))
-                        console.log(this.state.payout);
-                        //this.cashOut();
+                        this.cashOut();
                     }
                         .bind(this),
                     50

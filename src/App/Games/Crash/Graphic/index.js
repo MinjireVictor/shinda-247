@@ -185,6 +185,8 @@ class Canvas extends React.Component {
                                     <canvas id="graph" style={ check } />
                                 </Card.Body>
                             </Card>
+
+                            <img src='/assets/images/jp.jpeg' className='jp-image'></img>
                         </>
                     </div>
                 </Card.Body>

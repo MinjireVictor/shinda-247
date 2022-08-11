@@ -29,34 +29,34 @@ export const BRAND = "Shinda247";
  * PAYBILL
  * @type {string}
  */
-export const PAYBILL = "PAYBILL NUMBER";
+export const PAYBILL = "523921";
 
 /**
  *
  * ACC_NAME
  * @type {string}
  */
-export const ACC_NAME = "BAYSIDE";
+export const ACC_NAME = "Your Phone Number";
 
 /**
  *
  * Site URL
  * @type {string}
  */
-export const SITE = DEVELOPMENT ? 'http://localhost:3000' : 'https://';
+export const SITE = DEVELOPMENT ? 'https://api.shinda247.com' : 'https://api.shinda247.com';
 
 /**
  *
  * General Socket Address
  * @type {string}
  */
-export const SOCKET = DEVELOPMENT ? 'ws://127.0.0.1:3004' : 'ws://localhost:3005';
+export const SOCKET = DEVELOPMENT ? 'ws://127.0.0.1:3004' : 'wss://api.shinda247.com';
 
 /**
  * General API Address
  * @type {string}
  */
-export const API = DEVELOPMENT ? 'http://127.0.0.1:3004' : 'http://localhost:3005';
+export const API = DEVELOPMENT ? 'http://127.0.0.1:3004' : 'https://api.shinda247.com';
 
 /*
  * Support Skype

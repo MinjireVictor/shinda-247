@@ -18,6 +18,8 @@ import History from "./History";
 import AllBets from "./AllBets";
 import Engine from "./Engine";
 
+import Chat from "./../../Pages/Parts/Chat";
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -96,9 +98,11 @@ function Queue(props) {
                         aria-label="full width tabs"
                         centered
                     >
+                        
+                        <Tab onClick={load} icon={<i className={'mdi mdi-chart-bar'} />} label="All Bets" {...a11yProps(0)} />
                         <Tab icon={<i className={'mdi mdi-chart-donut'} />} label="History" {...a11yProps(2)} />
                         <Tab icon={<i className={'mdi mdi-chart-areaspline'} />} label="My Bets" {...a11yProps(1)} />
-                        <Tab onClick={load} icon={<i className={'mdi mdi-chart-bar'} />} label="All Bets" {...a11yProps(0)} />
+                        <Tab icon={<i className={'mdi mdi-comment'} />} label="Chat" {...a11yProps(3)} />
                     </Tabs>
                 </AppBar>
                 <SwipeableViews
@@ -106,10 +110,13 @@ function Queue(props) {
                     index={value}
                     onChangeIndex={handleChangeIndex}
                 >
-                    <TabPanel value={value} index={0} dir={theme.direction}>
-                        <History tab={true} engine={engine} t={props.t} game={game} />
+                    <TabPanel className={classes.tab} value={value} index={0} dir={theme.direction}>
+                        <AllBets t={props.t} game={game} />
                     </TabPanel>
                     <TabPanel value={value} index={1} dir={theme.direction}>
+                        <History tab={true} engine={engine} t={props.t} game={game} />
+                    </TabPanel>
+                    <TabPanel value={value} index={2} dir={theme.direction}>
                         { (token !== null) &&
                             <MyBets engine={engine} t={props.t} game={game} />
                         }
@@ -117,9 +124,10 @@ function Queue(props) {
                             <div className={'alert alert-success mx-2 mt-2 font-13 text-white text-center'}>You must be logged to see your stats</div>
                         }
                     </TabPanel>
-                    <TabPanel className={classes.tab} value={value} index={2} dir={theme.direction}>
-                        <AllBets t={props.t} game={game} />
+                    <TabPanel value={value} index={3} dir={theme.direction}>
+                         <Chat t={props.t} location={props.location} />
                     </TabPanel>
+                    
                 </SwipeableViews>
             </div>
     );
