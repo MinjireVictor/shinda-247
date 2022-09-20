@@ -20,6 +20,10 @@ const FONT = 'Titillium Web';
 
 let cFont = null;
 
+import BackgroundImage from "../../../../assets/graph_bg.jpg"
+import CarouselComponent from '../includes/carousel.component';
+
+
 class Canvas extends React.Component {
     _isMounted = false;
 
@@ -168,7 +172,10 @@ class Canvas extends React.Component {
             };
         }
         return(
-            <Card className={"no-shadow m-0"}>
+            <Card className={"no-shadow m-0"} style={{backgroundImage: `url(${BackgroundImage})`,
+            backgroundPosition:"center center",
+             bacgroundRepeat:"no-repeat" ,
+             backgroundSize:"cover"}}>
                 <Card.Body className="bg-body game-aria text-center no-shadow p-1 static-snow" id="canvasPart">
                     <div className="game-holder">
                         { this.state.connecting &&
@@ -185,8 +192,8 @@ class Canvas extends React.Component {
                                     <canvas id="graph" style={ check } />
                                 </Card.Body>
                             </Card>
-
-                            <img src='/assets/images/jp.jpeg' className='jp-image'></img>
+                            <CarouselComponent/>
+                            {/* <img src='/assets/images/jp.jpeg' className='jp-image'></img> */}
                         </>
                     </div>
                 </Card.Body>
