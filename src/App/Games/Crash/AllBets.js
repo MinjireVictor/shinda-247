@@ -171,7 +171,7 @@ class UsersTable extends React.Component {
         }
 
         return (
-            <>
+           
                 <div className={'table-responsive last-bets cq num-style mb-0'}>
                     <Table className={"game-table mb-0 " + this.state.font}>
                         <thead><tr><th>PLAYER</th><th>PAYOUT</th><th className="text-left">BET</th><th className="text-left">PROFIT</th></tr></thead>
@@ -181,7 +181,7 @@ class UsersTable extends React.Component {
                         </tbody>
                     </Table>
                 </div>
-            </>
+           
         );
     }
 }

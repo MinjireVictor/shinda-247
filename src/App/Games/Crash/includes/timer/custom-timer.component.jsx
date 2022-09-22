@@ -55,18 +55,22 @@ const CountDownTimer=()=>{
     }
 
     return(
-        <div className="container">
+        <div className="container" >
+           
+            <div >
             <span className="txt-next-draw">Next Draw in:</span>
-             <div className="countdown-timer">
-            
-        
-           <p  className="two-numbers">{hours}</p>
-           <p> : </p>
-           <p  className="two-numbers" >{minutes}</p>
-           <p> : </p>
-           <p  className="two-numbers">{seconds}</p>
+            </div>
+        <div className="countdown-timer">
+           <span className="two-numbers">{hours}</span>
+           <span> : </span>
+           <span  className="two-numbers" >{minutes}</span>
+           <span> : </span>
+           <span className="two-numbers">{seconds}</span>
           
+
         </div>
+
+
         </div>
     )
 }

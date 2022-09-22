@@ -24,7 +24,7 @@ class Bet extends React.Component {
         let { margin } = this.state;
         let { token, isLogged, mobile } = this.props;
         return (
-            <>
+            <div style={{width:"100%",height:"100%",flexWrap:"wrap"}}>
                     <Tabs defaultActiveKey="manual" transition={false} id="crash-tabs" className={'tcr ml-1 mt-1 mb-2 ' + margin}>
                         <Tab eventKey="manual" title="Manual" tabClassName={'btn bg-cs2 btn-xs'}>
                             <ManualBet token={token} mobile={mobile} isLogged={isLogged} />
@@ -37,7 +37,7 @@ class Bet extends React.Component {
                         </Tab>
                     </Tabs>
                     <TimerComponent/>
-            </>
+            </div>
         );
     }
 }

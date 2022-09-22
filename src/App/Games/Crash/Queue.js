@@ -56,6 +56,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
+        overflowX: 'hidden',
     },
     tab: {
         overflowX: 'hidden',

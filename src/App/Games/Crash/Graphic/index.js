@@ -172,12 +172,12 @@ class Canvas extends React.Component {
             };
         }
         return(
-            <Card className={"no-shadow m-0"} style={{backgroundImage: `url(${BackgroundImage})`,
+            <Card className={"no-shadow m-0"} >
+                <Card.Body className="bg-body game-aria text-center no-shadow p-1 static-snow" id="canvasPart">
+                    <div className="game-holder" style={{backgroundImage: `url(${BackgroundImage})`,
             backgroundPosition:"center center",
              bacgroundRepeat:"no-repeat" ,
              backgroundSize:"cover"}}>
-                <Card.Body className="bg-body game-aria text-center no-shadow p-1 static-snow" id="canvasPart">
-                    <div className="game-holder">
                         { this.state.connecting &&
                             <div>
                                 <h3 className={"text-success font-35 my-5 d-block mb-5"}>CONNECTING</h3>

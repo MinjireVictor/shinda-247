@@ -1,5 +1,3 @@
-
-
 .timer-container{
     display:flex;
     flex-direction: row;
@@ -38,5 +36,6 @@
 }
 
 .timer{
-    height: auto;
-}
+    height: fit-content;
+
+  }

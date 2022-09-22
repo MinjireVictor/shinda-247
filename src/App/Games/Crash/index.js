@@ -80,7 +80,7 @@ class Index extends React.Component {
         let { col, padding, ovh } = this.state;
         return(
 
-            <>
+            <div style={{overflowX:"hidden",width:"100%"}}>
                 <ReactCSSTransitionGroup
                     transitionAppear={true}
                     transitionAppearTimeout={250}
@@ -100,6 +100,7 @@ class Index extends React.Component {
                                 <Card.Body className={'p-1 animated zoomIn'} id="roll-panel">
                                      <Canvas mobile={this.state.mobile}/>
                                 </Card.Body>
+                              
                             </Card>
 
                             {/* BET */}
@@ -112,6 +113,7 @@ class Index extends React.Component {
                                         </Col>
                                     </Row>
                                 </Card.Body>
+                               
                             </Card>
 
                             {/* QUEUE */}
@@ -132,7 +134,7 @@ class Index extends React.Component {
                     </div>
                     }
                 </ReactCSSTransitionGroup>
-            </>
+            </div>
         );
     }
 }

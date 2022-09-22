@@ -3,33 +3,39 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: fit-content;
   
 }
 
 .countdown-timer{
-    display: inline-flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    font-size: large;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    
     flex-wrap: wrap;
-    min-height: 55px;
-    height:55px;
+    min-height: 2ch;
+    height:fit-content;
     flex-direction: row;
     margin-bottom: 10px;
+
 }
 
 .two-numbers{
     width: 2ch;
     color: white;
     flex-grow: 0;
+    height:2ch;
+   
 }
 
-.countdown-timer p{
- font-size: 8vh;
+.countdown-timer span{
+ font-size: 8.0vh;
+ 
 
 }
 
 .txt-next-draw{
-  font-size: 20px;
+  font-size: 15px;
   color: white;
+
 }

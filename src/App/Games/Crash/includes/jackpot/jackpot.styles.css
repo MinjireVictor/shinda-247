@@ -11,23 +11,20 @@
 }
 .jackpot-title{
     font-weight: bold;
-    font-size: 4.1vh;
+    font-size: 20px;
     color: white;
     font-family: "ProximaNovaRegular";
 }
 .jackpot-description{
     color:#f5a358;
-    font-size: 2.6vh;
+    font-size: 14px;
     font-family: "ProximaNovaRegular";
 
 }
 
-.jackpot-description span{
-    color:white
-
+.jackpot-description p{
+    color:white;
+    font-size: 15px;
 }
 
-.jackpot-description span{
-    color:white
-}
 
