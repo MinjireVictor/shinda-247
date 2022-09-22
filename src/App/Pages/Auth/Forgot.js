@@ -86,7 +86,7 @@ class Forgot extends Component {
                             <div className={"m-auto min-form"}>
                                 <div className="px-3">
                                     <div className="text-center auth-logo-text">
-                                        <p className="mt-2 text-white">Get Your Password in Your Email</p>
+                                        <p className="mt-2 text-white">Enter your phone number to reset password</p>
                                     </div>
                                     <form className="my-4" onSubmit={ (e) => this.submitForm(e)} >
                                         <div className="form-group text-center">
