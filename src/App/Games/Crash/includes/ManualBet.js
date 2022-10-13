@@ -16,7 +16,7 @@ class ManualBet extends Component {
         super(props);
         this.state = {
             engine: null,
-            buttonText: 'BET',
+            buttonText: 'PLACE BET',
             buttonType: 'btn-bet',
             inputDisabled: false,
             buttonProgress: null,
@@ -202,7 +202,7 @@ class ManualBet extends Component {
                 holding: false,
                 inputDisabled: false,
                 buttonType: 'btn-bet',
-                buttonText: "BET"
+                buttonText: "PLACE BET"
            });
         }
     };
@@ -532,16 +532,17 @@ class ManualBet extends Component {
         if(amount === "NaN") amount = 10.00;
 
         return(
+            
             <div onKeyPress={ (e) => this.handleHotKey(e)}>
                 <form className="w-100 mt-1" onSubmit={(e) => { this.handleBet(e) }}>
-                    <Row>
-                        <Col xl={6} md={7} sm={12}>
-                            <div className={"form-group mb-1 bet-input payout"}>
+                    <Col>
+                        <Row xl={6} md={7} sm={12} >
+                            <div className={"form-group mb-1 bet-input payout"} style={{width:"100%"}}>
                                 <div className="input-group">
                                     <div className="input-group-append">
                                         <span className="input-group-text w-100">
-                                            <img src={"assets/images/btc.png"} alt="" className="mini-coin-2 mr-2" />
-                                             BET
+                                            {/* <img src={"assets/images/btc.png"} alt="" className="mini-coin-2 mr-2" /> */}
+                                             Bet Amount
                                         </span>
                                     </div>
                                     <input
@@ -566,12 +567,12 @@ class ManualBet extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </Col>
-                        <Col xl={6} md={5} sm={12}>
-                            <div className={ "form-group mb-1 bet-input payout mb-2"}>
+                        </Row>
+                        <Row xl={6} md={7} sm={12} >
+                            <div className={ "form-group mb-1 bet-input payout"} style={{width:"100%"}}>
                                 <div className="input-group">
                                     <div className="input-group-append">
-                                        <span className="input-group-text w-100">PAYOUT</span>
+                                        <span className="input-group-text w-100">Amount Cashout</span>
                                     </div>
                                     <input
                                         disabled={inputDisabled}
@@ -592,20 +593,20 @@ class ManualBet extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md={5} sm={12} className="m-auto text-center">
-                            <div className={ "form-group rev ovh bdr-lg mt-0 mb-0"}>
+                        </Row>
+                    </Col>
+                    <Col>
+                        <Row md={7} sm={12} className="m-auto text-center">
+                            <div className={ "form-group rev ovh bdr-lg mt-0 mb-0"}  style={{width:"100%"}}>
                                 <Button variant={'btn btn-block ' + buttonType}
                                         disabled={inputDisabled}
-                                        type="submit">
+                                        type="submit" >
                                     {buttonText}
                                 </Button>
                             </div>
-                        </Col>
+                        </Row>
                         { !mobile &&
-                        <Col md={12} sm={12} className="m-auto">
+                        <Row md={12} sm={12} className="m-auto">
                             <div className="form-inline">
                                 <Col md={12} sm={12} className="font-12 text-grey">
                                     <span className={'badge badge-info rounded cp'} onClick={ () => this.hotkeyChange() }>
@@ -614,9 +615,9 @@ class ManualBet extends Component {
                                     <HotKey />
                                 </Col>
                             </div>
-                        </Col>
+                        </Row>
                         }
-                    </Row>
+                    </Col>
                 </form>
             </div>
         );

@@ -3,11 +3,20 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {Dropdown} from "react-bootstrap";
 import coins from "../../../coins";
+import { ButtonGroup } from "react-bootstrap";
+import User from "../../Parts/User";
+import Notifications from "../../Parts/Notification";
 import socket from "../../../../Socket";
 import storage from "../../../../Storage";
 import {setCoin, gameCoin, setCredit} from "../../../../actions/gameCoin";
 import {__, wait, decode, encode, forceSatoshiFormat} from "../../../../Helper";
 import C from "../../../../Constant";
+import Coin from "../../../../assets/coin.png"
+import Logo from "../../Parts/Logo"
+import styled from "styled-components"
+import {fetchDummyData} from "../../../../utils/api.utils"
+
+
 
 class Credit extends React.Component {
     constructor(props){
@@ -152,6 +161,7 @@ class Credit extends React.Component {
                 <li id={id} className={'list-inline w-100 text-right animated frd ' + data.color}> {(data.color === 'text-danger'? '-': '+')}
                     {forceSatoshiFormat(data.amount, this.state.coin)}
                 </li>
+               
             </>
         );
     }
@@ -173,23 +183,97 @@ class Credit extends React.Component {
 
     render() {
         let { credit, coin } = this.state;
+        fetchDummyData()
 
         return (
-            <>
+            <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between", alignItems:"center", width:"100%"}}>
                 <div className="crypto-balance flex-1 p-1">
-                    <div className="like-row">
-                        <div className="btc-balance">
+               
+                   
+                        {/* <div className="btc-balance">
                             <h5 className="m-0 text-left font-12">Account balance:</h5>
                             <span className="text-white d-block font-16">
                                 {__.upperCase(coin) + ' ' + credit}
                             </span>
+                        </div> */}
+                     
+                        <div style={{display:"flex", flexDirection:"row", alignItems:"center",width:"100%", justifyContent:"space-between"}}>
+                        <Logo/>
+                             <div style={{display:"flex", flexDirection:"column",justifyContent:"center", alignItems:"center",
+                         justifyContent:"space-evenly"}}>
+                        <span style={{color:"#EDA562", fontSize:"1vw"}}>Need Help</span>
+                        <p style={{color:"white", fontSize:"1.1vw"}}> Call: 0721234567</p>
                         </div>
                         
-                    </div>
+                        <DisplayComponent nameToDisplay="274 JackPots" backgroundColor="#1F2637" hasImage={true}/>
+                        <DisplayComponent nameToDisplay="3,456.00" backgroundColor="#1F2637" hasImage={true}/>
+                        <DisplayComponent nameToDisplay="Deposit" backgroundColor="#EDA562" hasImage={false} />
+                        <DisplayComponent nameToDisplay="CASHIER" backgroundColor="#1F2637" hasImage={true}/>
+                        <ButtonGroup>
+                            <User t={this.props.t} history={this.props.history} />
+                            <Notifications t={this.props.t} />
+                        </ButtonGroup>
+
+                        </div>
+                     
+                  
                 </div>
-            </>
+            
+            <div>
+                <div>
+
+
+                </div>
+
+            </div>
+            </div>
         );
     }
+}
+
+const displayComponentStyles=styled.div`
+
+width:auto;
+height:5px;
+background-color:${(props)=>props.backgroundColor};
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:5px;
+color:white;
+flex-direction:row;
+padding:12px;
+
+&:hover {
+    cursor:pointer
+}
+
+`
+
+
+
+const DisplayComponent=({nameToDisplay, backgroundColor, hasImage})=>{
+    return(
+
+        // <div style={{width:"auto", height:"5vh", background:backgroundColor, display:"flex", 
+        // alignItems:"center", justifyContent:"center", borderRadius:"5px",color:"white", flexDirection:"row",
+        // padding:"12px"}}>
+
+        <displayComponentStyles backgroundColor={backgroundColor}>
+            <div style={{display:"flex", flexDirection:"row",alignItems:"center", justifyContent:"space-between"}}>
+                <div style={{marginRight:"12px"}}>
+                    {hasImage && <img src={Coin}></img>
+                    }
+               
+                </div>
+                <div style={{display:"flex", flexDirection:"row",alignItems:"center"}}>
+                <span>{nameToDisplay}</span>
+                </div>
+            </div>
+        </displayComponentStyles>
+         
+        
+    )
 }
 
 Credit.propTypes = {

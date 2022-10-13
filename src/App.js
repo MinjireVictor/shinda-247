@@ -17,6 +17,11 @@ import Details from "./App/Components/User/Stat/Details";
 import TipUser from "./App/Components/User/Tip";
 import UserLink from "./App/Components/User/Stat/Modal";
 import C from "./Constant";
+import { useSelector } from "react-redux";
+import { selectIsLoginClicked } from "./selectors/login.selector"
+import Login from "./App/Pages/Auth/Login"
+
+
 
 i18next.init({
     interpolation: { escapeValue: false }
@@ -34,7 +39,11 @@ const Loader = () => (
 function App() {
   return (
     <Suspense fallback={<Loader />}>
+              
+      
         <Page />
+
+      
     </Suspense>
   );
 }
@@ -105,7 +114,10 @@ class Application extends React.Component{
                     <Router history={history}>
                         {
                             this._isMounted &&
-                            <>
+                            <> 
+                            <div style={{height:"auto", width:"auto", display:"flex", alignItems:"center",justifyContent:"center", position:"absolute", top:"10px", right:"10px", zIndex:"10", color:"#fff"}}>
+                               <LoginPopup t={t} mobile={false}/>
+                                </div>
                                 <ReactNotification />
                                 <UserModal t={t} />
                                 <GameModal t={t} />
@@ -118,6 +130,24 @@ class Application extends React.Component{
             </BrowserRouter>
         );
     }
+}
+
+const LoginPopup=({t,mobile})=>{
+    const clicked=useSelector(selectIsLoginClicked)
+    console.log("LOGIN CLICKED --- ",clicked);
+    if(clicked){return(
+        <div>
+            {
+            clicked&& <Login t={t} mobile={mobile} />
+            }
+        </div>
+    )  
+    }
+    return null;
+
+
+    
+    
 }
 
 class SingleGameModal extends Component {

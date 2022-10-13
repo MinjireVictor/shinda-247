@@ -56,8 +56,7 @@ const CountDownTimer=()=>{
 
     return(
         <div className="container" >
-           
-            <div >
+            <div>
             <span className="txt-next-draw">Next Draw in:</span>
             </div>
         <div className="countdown-timer">

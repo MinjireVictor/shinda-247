@@ -7,10 +7,13 @@ import Image2 from "../../../../assets/jp2.jpeg"
 
 const CarouselComponent=()=>{
     return (
+        <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+
+      
         <Carousel showArrows={true} showStatus={false} 
         showIndicators={false} showThumbs={false} autoPlay={true} 
-        infiniteLoop={true} interval={5000}>
-            <div>
+        infiniteLoop={true} interval={5000} dynamicHeight={true} centerMode={true} centerSlidePercentage={75}   >
+            <div >
             <img src={Image} alt=""></img>
             </div>
             <div>
@@ -18,6 +21,7 @@ const CarouselComponent=()=>{
             </div>
            
         </Carousel>
+        </div>
     );
 
 }

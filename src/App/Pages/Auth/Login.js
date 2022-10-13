@@ -8,6 +8,10 @@ import socket from "../../../Socket";
 import {wait, decode, encode, randomString} from "../../../Helper";
 import C from "../../../Constant";
 import { Helmet } from "react-helmet";
+import styled from "styled-components"
+import {onLoginClosed} from "../../../actions/login.action"
+import {useDispatch} from "react-redux"
+
 
 class Login extends Component {
     constructor(props) {
@@ -123,6 +127,8 @@ class Login extends Component {
         this.setState({ showPass: !this.state.showPass});
     }
 
+
+
     render() {
         const { t, mobile } = this.props;
         const { disabled, status } = this.state;
@@ -218,55 +224,124 @@ class Header extends React.Component {
     }
 }
 
-class FormInputs extends React.Component {
 
-    render() {
-        const { t, mobile, handleChange, handleShowPass, state } = this.props;
-        const { submitted, username, password, showPass } = state;
-        const cls = mobile ? 'mb-3' : 'm-1';
-        const showPassCls = showPass ? 'fa-eye-slash' : 'fa-eye';
-        return (
-            <>
-                <div className={"form-group flex-1 " + cls}>
-                    <div className="input-group">
-                        <div className="input-group-append">
-                            <span className="input-group-text bgp">{mobile ? t('username') : <i className="fas fa-user font-18" />}</span>
-                        </div>
-                        <input type="text"
-                               className="form-control"
-                               name="username"
-                               value={username}
-                               autoComplete="off"
-                               onChange={handleChange}
-                        />
-                        {submitted && !username &&
-                            <div className="help-block">{t('username_is_required')}</div>
-                        }
-                    </div>
-                </div>
-                <div className={"form-group flex-1 " + cls}>
-                    <div className="input-group">
-                        <div className="input-group-append">
-                            <span className="input-group-text bgp">{mobile ? t('password') : <i className="fas fa-lock font-18" />}</span>
-                        </div>
-                        <input type={showPass ? "text" : "password"}
-                               className="form-control"
-                               name="password"
-                               value={password}
-                               autoComplete="off"
-                               onChange={handleChange}
-                        />
-                        <span className="show-pass cpt hvw" onClick={handleShowPass}>
-                            <i className={"fas " + showPassCls}></i>
-                        </span>
-                        {submitted && !password &&
-                            <div className="help-block">{t('password_is_required')}</div>
-                        }
-                    </div>
-                </div>
-            </>
-        );
+
+
+const FormInputs = ({t, mobile, handleChange, handleShowPass, state})=>{
+    const { submitted, username, password, showPass } = state;
+    const cls = mobile ? 'mb-3' : 'm-1';
+    const showPassCls = showPass ? 'fa-eye-slash' : 'fa-eye';
+    const dispatch=useDispatch();
+
+    const handleClosePopup=(event)=>{
+        console.log("CLOSED POPUP", event.target)
+        dispatch(onLoginClosed())
     }
+    
+    return (
+        <>
+        {/* Add the close button here */}
+           
+            <div className={"form-group flex-1 " + cls}>
+                <div className="input-group">
+                    <div className="input-group-append">
+                        <span className="input-group-text bgp">{mobile ? t('username') : <i className="fas fa-user font-18" />}</span>
+                      
+                    </div>
+                    <input type="text"
+                           className="form-control"
+                           name="username"
+                           value={username}
+                           autoComplete="off"
+                           onChange={handleChange}
+                    />
+                    {submitted && !username &&
+                        <div className="help-block">{t('username_is_required')}</div>
+                    }
+                </div>
+            </div>
+            <div className={"form-group flex-1 " + cls}>
+                <div className="input-group">
+                    <div className="input-group-append">
+                        <span className="input-group-text bgp">{mobile ? t('password') : <i className="fas fa-lock font-18" />}</span>
+                    </div>
+                    <input type={showPass ? "text" : "password"}
+                           className="form-control"
+                           name="password"
+                           value={password}
+                           autoComplete="off"
+                           onChange={handleChange}
+                    />
+                    <span className="show-pass cpt hvw" onClick={handleShowPass}>
+                        <i className={"fas " + showPassCls}></i>
+                    </span>
+                    {submitted && !password &&
+                        <div className="help-block">{t('password_is_required')}</div>
+                    }
+                </div>
+            </div>
+            <div className="m-2 view overlay zoom" onClick={handleClosePopup}> &#10005; </div>
+        </>
+    );
+
 }
+
+
+// class FormInputs extends React.Component {
+
+   
+
+//     render() {
+//         const { t, mobile, handleChange, handleShowPass, state } = this.props;
+//         const { submitted, username, password, showPass } = state;
+//         const cls = mobile ? 'mb-3' : 'm-1';
+//         const showPassCls = showPass ? 'fa-eye-slash' : 'fa-eye';
+//         return (
+//             <>
+//             {/* Add the close button here */}
+               
+//                 <div className={"form-group flex-1 " + cls}>
+//                     <div className="input-group">
+//                         <div className="input-group-append">
+//                             <span className="input-group-text bgp">{mobile ? t('username') : <i className="fas fa-user font-18" />}</span>
+                          
+//                         </div>
+//                         <input type="text"
+//                                className="form-control"
+//                                name="username"
+//                                value={username}
+//                                autoComplete="off"
+//                                onChange={handleChange}
+//                         />
+//                         {submitted && !username &&
+//                             <div className="help-block">{t('username_is_required')}</div>
+//                         }
+//                     </div>
+//                 </div>
+//                 <div className={"form-group flex-1 " + cls}>
+//                     <div className="input-group">
+//                         <div className="input-group-append">
+//                             <span className="input-group-text bgp">{mobile ? t('password') : <i className="fas fa-lock font-18" />}</span>
+//                         </div>
+//                         <input type={showPass ? "text" : "password"}
+//                                className="form-control"
+//                                name="password"
+//                                value={password}
+//                                autoComplete="off"
+//                                onChange={handleChange}
+//                         />
+//                         <span className="show-pass cpt hvw" onClick={handleShowPass}>
+//                             <i className={"fas " + showPassCls}></i>
+//                         </span>
+//                         {submitted && !password &&
+//                             <div className="help-block">{t('password_is_required')}</div>
+//                         }
+//                     </div>
+//                 </div>
+//                 <div className="m-2 view overlay zoom"> &#10005; </div>
+//             </>
+//         );
+//     }
+// }
 
 export default withRouter(Login);

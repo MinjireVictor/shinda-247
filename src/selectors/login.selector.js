@@ -1,0 +1,1 @@
+export const selectIsLoginClicked=(state)=>state.login.loginClicked;

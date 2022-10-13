@@ -6,6 +6,8 @@ import User from "../Parts/User";
 import Credit from "../Parts/Credit";
 import Notifications from "../Parts/Notification";
 import { withRouter } from 'react-router-dom';
+import NewHeader from "../Header/login-header/header"
+
 
 class UserWrapper extends React.Component {
 
@@ -15,11 +17,11 @@ class UserWrapper extends React.Component {
             <>
                 {isLoggedIn ?
                     <div className="like-row">
-                        <Credit t={t} history={history} />
-                        <ButtonGroup>
+                        <Credit t={t} history={history}  />
+                        {/* <ButtonGroup>
                             <User t={t} history={history} />
                             <Notifications t={t} />
-                        </ButtonGroup>
+                        </ButtonGroup> */}
                     </div>
                 :
                     <>
@@ -33,7 +35,8 @@ class UserWrapper extends React.Component {
                             </div>
                         </div>
                     :
-                        <Login t={t} mobile={mobile} />
+                        // <Login t={t} mobile={mobile} />
+                        <NewHeader t={t} mobile={mobile}/>
                     }
                     </>
                 }

@@ -11,7 +11,6 @@
     display: flex;
     justify-content: space-around;
     align-items:center;
-    
     flex-wrap: wrap;
     min-height: 2ch;
     height:fit-content;
@@ -29,7 +28,7 @@
 }
 
 .countdown-timer span{
- font-size: 8.0vh;
+ font-size: 2rem;
  
 
 }

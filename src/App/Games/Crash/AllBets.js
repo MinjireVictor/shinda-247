@@ -122,12 +122,18 @@ class Child extends React.Component {
         }
     }
 
+ 
+
     render () {
+        const slicedPlayers=this.state.playersObject.slice(0,5)
+        const slicedWinners=this.state.winnersObject.slice(0,5)
+        console.log("Sliced players="+slicedPlayers.length)
+
         return(
             <ShowUserTable
                 engine={this.props.engine}
-                players={this.state.playersObject}
-                winners={this.state.winnersObject}
+                players={slicedPlayers}
+                winners={slicedWinners}
             />
         )
     }
