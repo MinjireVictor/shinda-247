@@ -1,23 +1,21 @@
 import { LOGIN_TYPES } from "../App/types/login.types";
 
+const INITIAL_STATE = {
+  loginClicked: false,
+  isLoggedIn: false,
+};
 
-const INITIAL_STATE={
-    loginClicked:false
-}
+export const LoginReducer = (state = INITIAL_STATE, action = {}) => {
+  const { type, payload } = action;
 
-
-export const LoginReducer=(state=INITIAL_STATE, action={})=>{
-    const {type, payload}= action
-    console.log("TYPE", type)
-    switch(type){
-        case LOGIN_TYPES.LOGIN_CLICKED:
-
-        return {...state,loginClicked:true}
-        case LOGIN_TYPES.LOGIN_CLOSED:
-
-        return{...state,loginClicked:false}
-        default:
-
-        return state;
-    }
-}
+  switch (type) {
+    case LOGIN_TYPES.LOGIN_CLICKED:
+      return { ...state, loginClicked: true };
+    case LOGIN_TYPES.LOGIN_CLOSED:
+      return { ...state, loginClicked: false };
+    case LOGIN_TYPES.IS_LOGGED_IN:
+      return { ...state, isLoggedIn: payload };
+    default:
+      return state;
+  }
+};

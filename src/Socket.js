@@ -5,11 +5,11 @@ import { SOCKET, Event, sendNotfication } from "./Helper";
  * Socket URL
  */
 
-// const ws = SOCKET;
-// http://34.78.45.194:8081/
+const ws = SOCKET;
+
 // use this to connect with the development server
-const ws =
-  process.env.NODE_ENV !== "production" ? "http://34.78.45.194:8081" : SOCKET;
+// const ws =
+//   process.env.NODE_ENV !== "production" ? "ws://34.78.211.210:3005" : SOCKET;
 
 console.log("ws--- ", ws);
 /**

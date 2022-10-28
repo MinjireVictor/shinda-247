@@ -4,25 +4,18 @@ import { connect } from "react-redux";
 import * as Cookies from "js-cookie";
 //import UserHeader from './Parts/Header/Header-User';
 //import GuestHeader from './Parts/Header/Header-Guest';
-import Chat from "./Parts/Chat";
 //import Register from "./Auth/Register";
-import Sidebar from "./Parts/Sidebar";
-import Footer from "./Parts/Footer";
 import socket from "../../Socket";
 import { Event, decode, encode, wait } from "../../Helper";
-import WalletAlert from "../../App/Components/User/Wallet/Alert";
 import C from "../../Constant";
-import UserWrapper from "./Auth/UserWrapper";
-import AllBets from "../Games/Crash/AllBets";
 import storage from "../../Storage";
 import Bet from "../Games/Crash/Bet";
 import Canvas from "../Games/Crash/Graphic/index";
 import CarouselComponent from "../Games/Crash/includes/carousel.component";
 import Queue from "../Games/Crash/Queue";
-import { wrap } from "lodash";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+
+import HistoryList from "../../App/Games/Crash/includes/HistoryList";
 
 class Index extends React.Component {
   constructor(props) {
@@ -37,7 +30,7 @@ class Index extends React.Component {
 
   componentDidMount() {
     this.setState({ width: window.innerWidth });
-    console.log("width", window.innerWidth);
+
     window.addEventListener("resize", this.handleResize);
     socket.on(C.ONLINE, (status) => this.loginUser(decode(status)));
     Event.on("showAuthModal", (status) => this.activeAuth(status));
@@ -99,7 +92,6 @@ class Index extends React.Component {
     let wallet; // Show Wallet if User don't Have Cash
     const { isLoggedIn } = this.state;
     const { width } = this.state;
-    console.log("width", width);
 
     try {
       wallet = this.props.get_wallet.show;
@@ -108,9 +100,8 @@ class Index extends React.Component {
       <div>
         <div>
           <div style={{ backgroundColor: "#000", marginBottom: "10px" }}>
-            <UserWrapper t={t} isLoggedIn={isLoggedIn} mobile={false} />
+            {/* <UserWrapper t={t} isLoggedIn={isLoggedIn} mobile={false} /> */}
           </div>
-
           <PageWrapper width={width}>
             {/* <Sidebar t={t} /> */}
             <AllBetsWrapper width={width}>
@@ -120,8 +111,10 @@ class Index extends React.Component {
             </AllBetsWrapper>
 
             {/* <div className="page-content ova flex-column" id={'page-content'}> */}
+
             <CanvasWrapper width={width}>
               <Canvas />
+              <HistoryList t={t} />
 
               {/* This is the old layout */}
               {/* <div className="flex-1">
@@ -187,9 +180,9 @@ class Index extends React.Component {
 }
 
 const PageWrapper = styled.div`
-${(props) => console.log("PAGER WIDTH", props.width)}
+
   flex: 1;
-  flex-direction: ${(props) => (props.width < 900 ? `column-reverse;` : `row;`)}
+  flex-direction: ${(props) => (props.width < 950 ? `column-reverse;` : `row;`)}
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -198,7 +191,7 @@ ${(props) => console.log("PAGER WIDTH", props.width)}
 `;
 
 const AllBetsWrapper = styled.div`
-  width: ${(props) => (props.width < 900 ? `100%;` : `35%;`)}
+  width: ${(props) => (props.width < 950 ? `100%;` : `35%;`)}
   height: 100%;
   margin: 5px;
   padding: 10px;
@@ -207,7 +200,7 @@ const AllBetsWrapper = styled.div`
 `;
 
 const CanvasWrapper = styled.div`
-width: ${(props) => (props.width < 900 ? `100%;` : `60%;`)}
+width: ${(props) => (props.width < 950 ? `100%;` : `60%;`)}
 height: 100%;
 corner-radius:1vh;
 padding:10px;

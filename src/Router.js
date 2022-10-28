@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
-
 import Index from "./App/Pages";
 import NotFound from "./App/Pages/404";
 import Privacy from "./App/Pages/Privacy";
@@ -15,18 +14,17 @@ import Wallet from "./App/Components/User/Wallet";
 import GameStat from "./App/Components/Game/Stat";
 import UserSetting from "./App/Components/User/Setting";
 import Leaderboard from "./App/Pages/Leaderboard";
-
 import Crash from "./App/Games/Crash";
 
 function Router(props) {
-    let location = useLocation();
-    let background = location.state && location.state.background;
+  let location = useLocation();
+  let background = location.state && location.state.background;
 
-    const { t } = props;
+  const { t } = props;
 
-    return (
-        <>
-            <Switch history={props.history} location={background || location}>
+  return (
+    <>
+      {/* <Switch history={props.history} location={background || location}>
                 <Route exact path="/" children={<Index t={t} location={location} content={<Crash t={t} />} />} />
                 <Route path="/leaderboard" children={<Index t={t} content={<Leaderboard t={t}  />} />} />
                 <Route path="/privacy" children={<Index t={t} content={<Privacy t={t} history={props.history} />} />} />
@@ -43,9 +41,9 @@ function Router(props) {
                 <Route path="*">
                     <NotFound />
                 </Route>
-            </Switch>
-        </>
-    );
+            </Switch> */}
+    </>
+  );
 }
 
 export default Router;

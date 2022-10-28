@@ -13,7 +13,7 @@ class Logo extends React.Component {
                 src="/assets/images/logo.png"
                 className="logo-sm"
                 alt="Logo"
-                style={{ maxWidth: "100%", height: "auto" }}
+                style={{ minWidth: "120px", height: "auto", width: "100%" }}
               />
             </span>
           </Link>

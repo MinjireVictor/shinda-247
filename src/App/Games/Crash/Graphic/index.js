@@ -310,7 +310,8 @@ function GameCanvas() {
       self.canvas.style.maxHeight = "100%";
       self.canvas.style.padding = "20px";
       self.canvasWidth = width;
-      self.canvasHeight = height;
+      //change the height of the graph from here
+      self.canvasHeight = 500;
       self.coors = null;
     }),
     (self.render = function () {
@@ -351,12 +352,12 @@ function GameCanvas() {
         };
 
         // Busted Font
-        // change font size here
+        // change font for Chapa here size here
         self.coors.busted = {
           x: nr((self.coors.width + ttm) / 2),
           y1: nr(0.51 * self.coors.height),
           y2: nr(0.65 * self.coors.height),
-          font: nr(0.2 * h),
+          font: nr(0.1 * h),
         };
 
         // Current Hash / BankRoll / Profit Font
@@ -380,6 +381,7 @@ function GameCanvas() {
 
         let spaceInBelowNumbers = self.canvasWidth + 60;
 
+        // You can change the axis parameters from here
         let gety1 = nr(spaceInBelowNumbers + ttm),
           gety12 = nr(dooGal),
           gety123 = nr(0.055 * h), // Axis Font Size
@@ -428,6 +430,7 @@ function GameCanvas() {
         }
       }
     }),
+    // change the line width of the graphs from here
     (self.drawAxis = function (value) {
       value.lineWidth = 1;
       value.strokeStyle = AXIS_LINE_COLOR;
@@ -471,7 +474,9 @@ function GameCanvas() {
         (value.strokeStyle = AXIS_NUMBER_COLOR);
       value.fillStyle = AXIS_NUMBER_COLOR;
       value.textAlign = "center";
-      value.font = `small-caps ${self.coors.axis.font}px ` + FONT;
+      //change the size of the graph numbers here
+      //value.font = `small-caps ${self.coors.axis.font}px ` + FONT;
+      value.font = `small-caps 20px ` + FONT;
 
       let ttm = self.time_passed < 1e4 ? 10 : nr(self.time_passed / 1e3);
 
@@ -547,7 +552,8 @@ function GameCanvas() {
     gradient.addColorStop("1.0", "#ff490f");
     for (
       value.strokeStyle = self.im_in_game ? IN_GAME_COLOR : gradient,
-        value.lineWidth = 4,
+        //Adjust the line width for the graph from here
+        value.lineWidth = 2,
         value.beginPath(),
         value.moveTo(self.coors.origin.x, self.coors.origin.y),
         null == self.graph_part && (self.graph_part = 100),
@@ -600,17 +606,21 @@ function GameCanvas() {
     self.canvas.style.fontWeight = 700;
     self.canvas.style.textShadow = 0;
     value.fontWeight = 700;
+    // The burst is calculated here
     let ttm = Math.pow(Math.E, 6e-5 * self.time_passed).toFixed(2);
     value.fillStyle = self.im_in_game ? IN_GAME_COLOR : COUNTER_COLOR;
     value.textAlign = "center";
     let canvasFont = cFont !== null ? cFont : storage.getKey("cFont");
-    value.font = `normal normal 700 ${canvasFont}px/1 "${FONT}"`;
+    //change the counter size from this line
+    // value.font = `normal normal 700 ${canvasFont}px/1 "${FONT}"`;
+    value.font = `normal normal 700 160px "${FONT}"`;
     value.fillText(ttm + "x", self.coors.amount.x, self.coors.amount.y);
   };
 
   self.drawBusted = function (value) {
     null == self.busted_text &&
       (self.busted_text = {
+        // Modify the Busted text from here
         line1: self.busted_title + " " + self.busted_amount + "x",
       });
     value.fillStyle = BUSTED_COLOR;
